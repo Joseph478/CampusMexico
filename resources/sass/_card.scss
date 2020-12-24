@@ -1,0 +1,79 @@
+.border21 {
+    border: 1px solid red;
+}
+
+.course-card {
+    max-width: 100%;
+    border-radius: 8px;
+    &__item {
+        font-weight: 600;
+        color: #495057;
+    }
+    &__img {
+        img {
+            height: 100%;
+            border-radius: 8px;
+        }
+    }
+    &__content {
+        flex: 1;
+    }
+    &__action {
+        width: 100%;
+    }
+}
+
+.card-detail {
+    &__img {
+        padding: .4em;
+        height: 120px;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            display: block;
+            height: 70px;
+            width: 70px;
+        }
+    }
+    &__title {
+        font-size: 1.1em;
+        letter-spacing: 1pt;
+    }
+}
+
+
+.bg {
+
+    &__modulo {
+        background-color: #215A7F;
+    }
+    &__material {
+        background-color: #D6483A;
+    }
+    &__reunion {
+        background-color: #F8B864;
+    }
+    &__test {
+        background-color: #21AA9A;
+    }
+    &__tarea {
+        background-color: #D6483A;
+    }
+    &__juego {
+        background-color: #642D50;
+    }
+
+    &__anuncio {
+        background-color: #0CB7F2;
+    }
+
+    &__documento {
+        background-color: #FF883E;
+    }
+
+    &__videos {
+        background-color: #e74c3c;
+    }
+}

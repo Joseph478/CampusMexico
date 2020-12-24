@@ -1,0 +1,16 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~select2/dist/css/select2.css';
+@import '~@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css';
+@import '~pc-bootstrap4-datetimepicker/src/sass/bootstrap-datetimepicker-build';
+@import 'main';
+@import 'image';
+@import 'card';
+
