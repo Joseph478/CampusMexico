@@ -29,6 +29,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    protected $typeField;
     /**
      * Create a new controller instance.
      *
@@ -37,14 +38,26 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->typeField = $this->typeFieldUsername();
     }
 
-    public function username()
+    public function typeFieldUsername(): string
     {
-        return 'dni';
+        $username = request()->input('dni');
+
+        $fieldType = filter_var($username, FILTER_VALIDATE_EMAIL) ? 'email' : 'dni';
+
+        request()->merge([$fieldType => $username]);
+
+        return $fieldType;
     }
 
-    protected function credentials(Request $request)
+    public function username(): string
+    {
+        return $this->typeField;
+    }
+
+    protected function credentials(Request $request): array
     {
         $credentials = $request->only($this->username(), 'password');
         $credentials['state'] = 1;
