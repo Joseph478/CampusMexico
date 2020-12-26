@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder
             'password'=> bcrypt('root'),
         ]);
         $participant = User::create([
-            'company_id' => 1,
+            'company_id' => 2,
             'dni' => '46185127',
             'name'=>'Henrry',
             'last_name'=>'sairitupac arones',
@@ -33,10 +33,10 @@ class UserTableSeeder extends Seeder
         $contrata_melissa = User::create([
             'company_id' => 2,
             'dni' => '45882055',
-            'name'=>'FABIOLA MELISSA',
-            'last_name'=>'QUISPE SALCEDO',
-            'email'=>'fquispe@perurail.com',
-            'password'=> bcrypt('45882055'),
+            'name'=>'Ma',
+            'last_name'=>'Barcar',
+            'email'=>'MAbarcar@SouthernPeru.com.pe',
+            'password'=> bcrypt('contratista123'),
         ]);
         $contrata = User::create([
             'company_id' => 1,
@@ -51,8 +51,8 @@ class UserTableSeeder extends Seeder
             'dni' => '00000001',
             'name'=>'Angelica',
             'last_name'=>'Fonseca',
-            'email'=>'angelica@ighgroup.com',
-            'password'=> bcrypt('11221133'),
+            'email'=>'angelica.fonseca@ighgroup.com',
+            'password'=> bcrypt('fonseca$$12'),
         ]);
 
         $admin_permissions = Permission::pluck('id', 'id')->all();
