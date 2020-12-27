@@ -43,6 +43,7 @@ class ParticipantsController extends Controller
 
     public function detail(Classroom $classroom, User $user) {
 
+
         $key=0;
         $c = $classroom
             ->load(['course.contents.type', 'tests', 'meetings'])

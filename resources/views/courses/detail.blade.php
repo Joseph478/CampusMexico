@@ -16,7 +16,7 @@
                 <div class="card-body">
 
                     <div class="row">
-                    @if($key==0)
+
                         @foreach($types as $type)
                             <div class="col-sm-4 d-flex flex-column align-items-center mb-4 card-detail">
                                 <div class="bg__{{ Str::camel($type->name) }} mb-3 p-2 rounded-circle card-detail__img">
@@ -32,8 +32,8 @@
                             </div>
 
                         @endforeach
-                    @endif
-                    @if($key==0)
+
+
                         @if(count($classroom->meetings) > 0)
                             <div class="col-sm-4 d-flex flex-column align-items-center mb-4 card-detail">
                                 <div class="bg__reunion mb-3 p-2 rounded-circle card-detail__img">
@@ -41,7 +41,7 @@
                                 <span class="font-weight-bold card-detail__title">Video Conferencia</span>
                             </div>
                         @endif
-                    @endif
+
 
                             @if(count($classroom->tests) > 0)
                             <div class="col-sm-4 d-flex flex-column align-items-center mb-4 card-detail">
