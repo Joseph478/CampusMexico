@@ -31,9 +31,9 @@ class CourseTestController extends Controller
         $classroom->load(['course.banks' => function($query) use($test) {
             if($test->random == 1)
             {
-                $query->inRandomOrder()->limit($test->number_question)->where('banks.parent_id',null)->with(['childs']);
+                $query->inRandomOrder()->limit($test->number_question)->where('banks.parent_id',null)->whereIn('type' ,[$test->type,Bank::EXTRAORDINARY])->with(['childs']);
             }else{
-                $query->limit($test->number_question)->where('banks.parent_id',null)->with(['childs']);
+                $query->limit($test->number_question)->where('banks.parent_id',null)->whereIn('type' ,[$test->type,Bank::EXTRAORDINARY])->with(['childs']);
             }
         }])->get();
 

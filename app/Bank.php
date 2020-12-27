@@ -37,11 +37,14 @@ use Illuminate\Support\Arr;
 class Bank extends Model
 {
     protected $fillable=[
-    'content_id','title','is_question','is_correct','parent_id','state',
+    'content_id','title','is_question','is_correct','parent_id','state','type',
     ];
     const ACTIVE = '1';
     const LOCKED = '0';
     const PARENT_ID = null;
+    const REGULAR = '0';
+    const BEGIN = '1';
+    const EXTRAORDINARY = '2';
 
     public function content() {
         return $this->belongsTo(Content::class);

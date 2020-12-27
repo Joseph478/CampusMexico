@@ -24,8 +24,8 @@ class CreateClassroomsTable extends Migration
                 ->references('id')->on('users')
                 ->onDelete('cascade');
             $table->string('type')->default(\App\Classroom::TYPE_REGULAR);
-            $table->dateTime('start_datetime');
-            $table->datetime('end_datetime');
+            $table->dateTime('start_datetime')->nullable();
+            $table->datetime('end_datetime')->nullable();
             $table->string('vacancies');
             $table->string('modality');
             $table->string('test_begin_required',1)->default(\App\Classroom::TEST_BEGIN_NO_REQUIRED);
