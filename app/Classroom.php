@@ -122,7 +122,7 @@ class Classroom extends Model
 
     public function participants() {
         return $this->belongsToMany(User::class, 'inscriptions', 'classroom_id', 'user_id')
-            ->withPivot(['id', 'state'])
+            ->withPivot(['id', 'assistance', 'grade_begin', 'grade', 'state'])
             ->withTimestamps();
     }
 

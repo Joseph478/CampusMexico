@@ -20,16 +20,9 @@ class CompanyTableSeeder extends Seeder
         ]);
 
         Company::create([
-            'ruc' => '20431871808',
-            'name' => 'PERURAIL S.A.',
-            'address' => 'v. Armendariz Nro. 480 Int. 402 - Miraflores, Lima, Perú',
-            'state' => 1,
-        ]);
-
-        Company::create([
-            'ruc' => '20432747833',
-            'name' => 'FERROCARRIL TRANSANDINO S.A.',
-            'address' => 'Av. Armendariz Nro. 480 Int. 402 - Miraflores, Lima, Perú',
+            'ruc' => '20100147514',
+            'name' => 'SOUTHERN PERU COPPER CORPORATION SUCURSA L DEL PERU',
+            'address' => 'Av. Caminos del Inca Nro. 171 Chacarilla del Estanque - Santiago de Surco, Lima, Perú',
             'state' => 1,
         ]);
     }

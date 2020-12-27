@@ -19,7 +19,7 @@
                         <input id="dni" type="text"
                             class="form-control text-center @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}"
                             required autocomplete="dni" autofocus
-                            placeholder="Ingrese su dni">
+                            placeholder="Ingrese su dni o correo electronico">
 
                             @error('dni')
                                 <span class="invalid-feedback" role="alert">

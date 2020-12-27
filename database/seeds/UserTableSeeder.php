@@ -17,34 +17,26 @@ class UserTableSeeder extends Seeder
         $admin = User::create([
             'company_id' => 1,
             'dni' => '72974767',
-            'name'=>'a  dmin',
+            'name'=>'admin',
             'last_name'=>'igh',
             'email'=>'admin@mail.com',
             'password'=> bcrypt('root'),
         ]);
         $participant = User::create([
-            'company_id' => 1,
+            'company_id' => 2,
             'dni' => '46185127',
             'name'=>'Henrry',
             'last_name'=>'sairitupac arones',
             'email'=>'henrry.sairitupac@ighgroup.com',
             'password'=> bcrypt('root'),
         ]);
-        $contrata_stefani = User::create([
-            'company_id' => 2,
-            'dni' => '47426471',
-            'name'=>'STEFANI NOHEMI',
-            'last_name'=>'NUÑEZ CASTRO',
-            'email'=>'nnunez@perurail.com',
-            'password'=> bcrypt('47426471'),
-        ]);
         $contrata_melissa = User::create([
             'company_id' => 2,
             'dni' => '45882055',
-            'name'=>'FABIOLA MELISSA',
-            'last_name'=>'QUISPE SALCEDO',
-            'email'=>'fquispe@perurail.com',
-            'password'=> bcrypt('45882055'),
+            'name'=>'Ma',
+            'last_name'=>'Barcar',
+            'email'=>'MAbarcar@SouthernPeru.com.pe',
+            'password'=> bcrypt('contratista123'),
         ]);
         $contrata = User::create([
             'company_id' => 1,
@@ -56,19 +48,11 @@ class UserTableSeeder extends Seeder
         ]);
         $facilitator = User::create([
             'company_id' => 1,
-            'dni' => '11221133',
-            'name'=>'Ricardo',
-            'last_name'=>'Camacho',
-            'email'=>'ricardo.camacho@ighgroup.com',
-            'password'=> bcrypt('11221133'),
-        ]);
-        $facilitators = User::create([
-            'company_id' => 1,
-            'dni' => '11221144',
-            'name'=>'Pamela',
-            'last_name'=>'Franco',
-            'email'=>'pamela.franco@ighgroup.com',
-            'password'=> bcrypt('11221144'),
+            'dni' => '00000001',
+            'name'=>'Angelica',
+            'last_name'=>'Fonseca',
+            'email'=>'angelica.fonseca@ighgroup.com',
+            'password'=> bcrypt('fonseca$$12'),
         ]);
 
         $admin_permissions = Permission::pluck('id', 'id')->all();
@@ -99,7 +83,6 @@ class UserTableSeeder extends Seeder
         $rol = Role::findByName('contratista');
         $rol->syncPermissions($contrata_permissions);
         $contrata->assignRole([$rol->id]);
-        $contrata_stefani->assignRole([$rol->id]);
         $contrata_melissa->assignRole([$rol->id]);
 
         //$contrata->companies()->attach('1');
@@ -117,7 +100,6 @@ class UserTableSeeder extends Seeder
         $rols->syncPermissions($facilitator_permissions);
         $rols->revokePermissionTo('course-mine');
         $rols->givePermissionTo('inscription-assistance');
-        $facilitators->assignRole([$rols->id]);
         //$facilitators->companies()->attach('1');
         $facilitator->assignRole([$rols->id]);
         //$facilitator->companies()->attach('1');

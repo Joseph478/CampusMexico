@@ -166,7 +166,7 @@ class ReportsExport implements
         ];
         return [
             // Style the first row as bold text.
-            1 =>$styleArray,
+            1 => $styleArray,
         ];
     }
 }

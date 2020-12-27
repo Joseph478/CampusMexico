@@ -62,12 +62,15 @@
                     </span>{{ Str::plural('participante', $classroom->scheduled_participants_count) }} {{ Str::plural('inscrito', $classroom->scheduled_participants_count) }}
                 </span>
                 <div>
-                    <a
-                        href="{{ route('classrooms.assistances.index', [$classroom->id]) }}"
-                        class="btn btn-sm btn-success">
-                        <i class="fa fa-clipboard-list mr-1"></i>
-                        Asistencia
-                    </a>
+{{--                    <a--}}
+{{--                        href="{{ route('classrooms.assistances.index', [$classroom->id]) }}"--}}
+{{--                        class="btn btn-sm btn-success">--}}
+{{--                        <i class="fa fa-clipboard-list mr-1"></i>--}}
+{{--                        Asistencia--}}
+{{--                    </a>--}}
+                    <a href="#" class="btn btn-sm btn-success">subir</a>
+                    <a href="{{ route('exportExcel.consolidated', $classroom) }}" class="btn btn-sm btn-primary">descargar</a>
+
                 </div>
             </div>
             <div class="table-responsive">
@@ -77,6 +80,9 @@
                         <th scope="col">#</th>
                         <th scope="col">Dni</th>
                         <th scope="col">Participante</th>
+                        <th scope="col">Asistencia</th>
+                        <th scope="col">Nota De Entrada</th>
+                        <th scope="col">Nota Final</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Acciones</th>
                     </tr>
@@ -98,6 +104,10 @@
                                     </div>
                                 </div>
                             </td>
+                            <td>{{ $participant->pivot->assistance }}</td>
+                            <td>{{ $participant->pivot->grade_begin }}</td>
+                            <td>{{ $participant->pivot->grade }}</td>
+
                             <td>
                                 @if($participant->pivot->state == '0')
                                     <div class="badge badge-danger">
@@ -115,6 +125,7 @@
                                     </div>
                                 @endif
                             </td>
+
                             <td>
                                 <form action="{{ route('inscriptions.destroy', $participant->id) }}" method="post">
                                     @csrf
