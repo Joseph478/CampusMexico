@@ -12,220 +12,227 @@ class BankTableSeeder extends Seeder
      */
     public function run()
     {
-        //NOTIFICACION, INVESTIGACION Y REPORTE DE INCIDENTES PELIGROSOS Y ACCIDENTES DE TRABAJO
+        //EXAMEN ENTRADA
         //1
         Bank::create([
-            'title'=>'Suceso acaecido en el curso del trabajo o en relación con el trabajo, en el que la persona afectada no sufre lesiones corporales, o en el que éstas sólo requieren cuidados de primeros auxilios, es:',
+            'title'=>' El comportamiento es: ',
             'is_question'=> 1,
+            'type'=> 1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Incidente',
-            'is_question'=> 0,
-            'is_correct'=> 1,
-            'parent_id'=> 1,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Accidente de trabajo:',
+            'title'=>'Es lo que la persona hace o dice (actos).',
             'is_question'=> 0,
             'parent_id'=> 1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'c.	Accidente leve',
+            'title'=>' Aquello que se puede ver o escuchar',
             'is_question'=> 0,
             'parent_id'=> 1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'d.	incidente mortal.',
+            'title'=>' Son observables y cuantificables',
             'is_question'=> 0,
+            'parent_id'=> 1,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>' Todas son correctas',
+            'is_question'=> 0,
+            'is_correct' =>1,
             'parent_id'=> 1,
             'content_id'=> 1,
         ]);
         //PREGUNTA2-6
         Bank::create([
-            'title'=>'¿Qué es un incidente peligroso?',
+            'title'=>' Los activadores',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Todo suceso potencialmente riesgoso que pudiera causar lesiones o enfermedades a las personas en su trabajo o a la población',
-            'is_question'=> 0,
-            'is_correct' => 1,
-            'parent_id'=> 6,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Suceso temporal con riesgo bajo a causar lesiones o enfermedades a las personas en su trabajo o a la población',
+            'title'=>' Desencadenan, estimulan, activan, motivan o direccionan el comportamiento',
             'is_question'=> 0,
             'parent_id'=> 6,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'c.	Toda acción del personal no capacitado.',
+            'title'=>' Se producen después del comportamiento',
             'is_question'=> 0,
             'parent_id'=> 6,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'d.	Todas son correctas.',
+            'title'=>' Son situaciones, eventos o sucesos.',
             'is_question'=> 0,
+            'parent_id'=> 6,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	A y C son correctas.',
+            'is_question'=> 0,
+            'is_correct'=> 1,
             'parent_id'=> 6,
             'content_id'=> 1,
         ]);
         //PREGUNTA3-11
         Bank::create([
-            'title'=>'Todo suceso repentino que sobrevenga por causa o con ocasión del trabajo y que produzca en el trabajador una lesión orgánica, una perturbación funcional, una invalidez o la muerte, es:',
+            'title'=>'	El comportamiento se desarrolla de la siguiente manera: ',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Accidente de trabajo',
-            'is_question'=> 0,
-            'is_correct'=> 1,
-            'parent_id'=> 11,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Accidente personal.',
+            'title'=>'	Antecedentes – Consecuencia - Comportamiento',
             'is_question'=> 0,
             'parent_id'=> 11,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'c.	Incidente',
+            'title'=>'	Antecedentes – Reforzadores - Consecuencia',
             'is_question'=> 0,
             'parent_id'=> 11,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'d.	Todas son correctas',
+            'title'=>'	Activadores – Comportamiento - Consecuencia',
+            'is_question'=> 0,
+            'parent_id'=> 11,
+            'is_correct'=>1,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Activadores – Reforzadores - Consecuencia',
             'is_question'=> 0,
             'parent_id'=> 11,
             'content_id'=> 1,
         ]);
         //PREGUNTA4-16
         Bank::create([
-            'title'=>'Clasificación de accidente:',
+            'title'=>'	Sobre las consecuencias, marque la alternativa correcta:',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Accidente leve, accidente incapacitante, accidente mortal.',
-            'is_question'=> 0,
-            'is_correct'=> 1,
-            'parent_id'=> 16,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Accidente leve, incidente incapacitante, accidente mortal.',
+            'title'=>'	Sustitución que ocurre luego del comportamiento.',
             'is_question'=> 0,
             'parent_id'=> 16,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'c.	Accidente leve, accidente fuerte, accidente severo.',
+            'title'=>'	Es el efecto del comportamiento.',
             'is_question'=> 0,
             'parent_id'=> 16,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'d.	Incidente leve, accidente incapacitante, accidente severo.',
+            'title'=>'	Influye en la repetición del comportamiento.',
             'is_question'=> 0,
             'parent_id'=> 16,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correctas',
+            'is_question'=> 0,
+            'parent_id'=> 16,
+            'is_correct'=>1,
             'content_id'=> 1,
         ]);
         //PREGUNTA5-21
         Bank::create([
-            'title'=>'¿Cuáles son los accidentes incapacitantes?',
+            'title'=>'	Las consecuencias pueden ser evaluadas por:',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Total temporal – Parcial permanente – Total permanente.',
-            'is_question'=> 0,
-            'is_correct'=> 1,
-            'parent_id'=> 21,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Parcial y total permanente',
+            'title'=>'	Significado',
             'is_question'=> 0,
             'parent_id'=> 21,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'c.	Total temporal – parcial total.',
+            'title'=>'	Tiempo',
             'is_question'=> 0,
             'parent_id'=> 21,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'d.	Total parcial – total permanente. ',
+            'title'=>'	Consistencia',
             'is_question'=> 0,
             'parent_id'=> 21,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correcta.',
+            'is_question'=> 0,
+            'parent_id'=> 21,
+            'is_correct'=>1,
             'content_id'=> 1,
         ]);
          //PREGUNTA6-26
         Bank::create([
-            'title'=>'¿Por qué ocurren los accidentes?',
+            'title'=>'	SBC se caracteriza por:',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Causas inmediatas, causas básicas, falta de control.',
-            'is_question'=> 0,
-            'is_correct'=> 1,
-            'parent_id'=> 26,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Causas inéditas',
+            'title'=>'	Se focaliza en lo positivo.',
             'is_question'=> 0,
             'parent_id'=> 26,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'c.	Falta de control en el trabajo',
+            'title'=>'	Cada trabajador observa y retroalimenta a sus compañeros.',
             'is_question'=> 0,
             'parent_id'=> 26,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'d.	Casusas básicas en el área de trabajo',
+            'title'=>'	Cada trabajador es observado y retroalimentado por sus compañeros.',
             'is_question'=> 0,
             'parent_id'=> 26,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correctas.',
+            'is_question'=> 0,
+            'parent_id'=> 26,
+            'is_correct'=>1,
             'content_id'=> 1,
         ]);
         //PREGUNTA7-31
         Bank::create([
-            'title'=>'¿Cuáles son las causas inmediatas?',
+            'title'=>'	NO es un ESTADO CRÍTICO:',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Actos sub-estándares y condiciones sub-estándares.',
+            'title'=>'	Prisa',
             'is_question'=> 0,
+            'parent_id'=> 31,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>' Fatiga',
+            'is_question'=> 0,
+            'parent_id'=> 31,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Línea de fuego',
+            'is_question'=> 0,
+            'parent_id'=> 31,
             'is_correct'=> 1,
-            'parent_id'=> 31,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'b.	Incidentes ',
-            'is_question'=> 0,
-            'parent_id'=> 31,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Actos estandarizados.',
-            'is_question'=> 0,
-            'parent_id'=> 31,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Actos y condiciones estandar.',
+            'title'=>'	Frustración',
             'is_question'=> 0,
             'parent_id'=> 31,
             'content_id'=> 1,
@@ -233,62 +240,64 @@ class BankTableSeeder extends Seeder
 
         //PREGUNTA8-36
         Bank::create([
-            'title'=>'¿Cuáles son las causas básicas?',
+            'title'=>'	En el proceso de SBC es necesario: ',
             'is_question'=> 1,
+            'type'=> 1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Factores personales y factores del trabajo.',
+            'title'=>'	Observar a sí mismo',
             'is_question'=> 0,
+            'parent_id'=> 36,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Observar a los demás',
+            'is_question'=> 0,
+            'parent_id'=> 36,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Comunicar ',
+            'is_question'=> 0,
+            'parent_id'=> 36,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correctas',
+            'is_question'=> 0,
+            'parent_id'=> 36,
             'is_correct'=> 1,
-            'parent_id'=> 36,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Actos subestándares',
-            'is_question'=> 0,
-            'parent_id'=> 36,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Condiciones subestándares',
-            'is_question'=> 0,
-            'parent_id'=> 36,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Ninguna es correcta',
-            'is_question'=> 0,
-            'parent_id'=> 36,
             'content_id'=> 1,
         ]);
         //PREGUNTA9-41
         Bank::create([
-            'title'=>'9.	¿Qué es falta de control?',
+            'title'=>'	Cuando observo un acto inseguro debo: ',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Carencia de estándares y procedimientos',
+            'title'=>'	Retirarme del lugar-',
             'is_question'=> 0,
+            'parent_id'=> 41,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Establecer un comportamiento y la consecuencia. ',
+            'is_question'=> 0,
+            'parent_id'=> 41,
             'is_correct'=> 1,
-            'parent_id'=> 41,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'Recopilar evidencia. ',
+            'title'=>'	Avisarle al supervisor.',
             'is_question'=> 0,
             'parent_id'=> 41,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'b.	Respuesta inicial.',
-            'is_question'=> 0,
-            'parent_id'=> 41,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Ninguna es correcta',
+            'title'=>'	Ninguna es correcta.',
             'is_question'=> 0,
             'parent_id'=> 41,
             'content_id'=> 1,
@@ -296,253 +305,363 @@ class BankTableSeeder extends Seeder
         ///aumentamos
         //PREGUNTA10-46
         Bank::create([
-            'title'=>'10.	¿Qué es un acto sub-estándar?',
+            'title'=>'	¿Qué debo hacer cuando observo un acto seguro?',
             'is_question'=> 1,
+            'type'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Es toda acción o práctica incorrecta ejecutada por el trabajador que puede causar un accidente.',
-            'is_question'=> 0,
-            'parent_id'=> 46,
-            'is_correct'=> 1,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Es toda condición en el entorno del trabajo que puede causar un accidente',
+            'title'=>'	Agradecer por su comportamiento seguro',
             'is_question'=> 0,
             'parent_id'=> 46,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'c.	Es toda acción correcta realizado por el trabajador.',
+            'title'=>'	Compartir con los demás el comportamiento seguro.',
             'is_question'=> 0,
             'parent_id'=> 46,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'d.	Es toda acción o practica correcta del supervisor. ',
+            'title'=>'	Ay B son correctas.',
             'is_question'=> 0,
             'parent_id'=> 46,
-            'content_id'=> 1,
-        ]);
-        //PREGUNTA11-51
-        Bank::create([
-            'title'=>'11.	¿Qué es una condición sub-estándar?',
-            'is_question'=> 1,
+            'is_correct'=>1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'a.	Es toda condición en el entorno del trabajo que puede causar un accidente.',
+            'title'=>'	Ignorar su comportamiento seguro.',
             'is_question'=> 0,
-            'is_correct' => 1,
-            'parent_id'=> 51,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Es toda acción o práctica incorrecta ejecutada por el trabajador que puede causar un accidente',
-            'is_question'=> 0,
-            'parent_id'=> 51,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Es toda condición segura en el área de trabajo.',
-            'is_question'=> 0,
-            'parent_id'=> 51,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Es toda acción incorrecta del supervisor que puede causar daño. ',
-            'is_question'=> 0,
-            'parent_id'=> 51,
-            'content_id'=> 1,
-        ]);
-        //PREGUNTA12-56
-        Bank::create([
-            'title'=>'12.	Cuando nos referimos a limitaciones en experiencias, fobias y tensiones presentes en el trabajador, nos referimos a:',
-            'is_question'=> 1,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'a.	Factores personales.',
-            'is_question'=> 0,
-            'is_correct'=> 1,
-            'parent_id'=> 56,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Factores laborales.',
-            'is_question'=> 0,
-            'parent_id'=> 56,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Factores sub-estandar.',
-            'is_question'=> 0,
-            'parent_id'=> 56,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Factores ',
-            'is_question'=> 0,
-            'parent_id'=> 56,
-            'content_id'=> 1,
-        ]);
-        //PREGUNTA13-61
-        Bank::create([
-            'title'=>'13.	¿Cuáles son los tipos de evidencias?',
-            'is_question'=> 1,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'a.	Persona.',
-            'is_question'=> 0,
-            'parent_id'=> 61,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Posición.',
-            'is_question'=> 0,
-            'parent_id'=> 61,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Papeles.',
-            'is_question'=> 0,
-            'parent_id'=> 61,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Todas son correctas.',
-            'is_question'=> 0,
-            'parent_id'=> 61,
-            'is_correct'=> 1,
-            'content_id'=> 1,
-        ]);
-        //PREGUNTA14-66
-        Bank::create([
-            'title'=>'14.	¿Cuál es la responsabilidad del jefe inmediato?',
-            'is_question'=> 1,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'a.	Analizar cuál es el nivel de consecuencia y potencialidad del incidente, acto o condición sub estándar, para ello hace uso de la tabla Evaluación de Consecuencia y Potencialidad.',
-            'is_question'=> 0,
-            'parent_id'=> 66,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Realizar un análisis preliminar de las posibles causas que ocasionaron el incidente, acto o condición sub estándar. ',
-            'is_question'=> 0,
-            'parent_id'=> 66,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Determinar si requiere o no, investigación.',
-            'is_question'=> 0,
-            'parent_id'=> 66,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Todas son correctas',
-            'is_question'=> 0,
-            'parent_id'=> 66,
-            'is_correct' => 1,
-            'content_id'=> 1,
-        ]);
-         //PREGUNTA15-71
-        Bank::create([
-            'title'=>'15.	¿Cuál es la responsabilidad del reportante?',
-            'is_question'=> 1,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'a.	Indicar el lugar, fecha y hora de ocurrencia. ',
-            'is_question'=> 0,
-            'parent_id'=> 71,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	La descripción del incidente, acto o condición sub-estándar, anotando la información importante que esclarezca y detalle de manera objetiva el suceso. ',
-            'is_question'=> 0,
-            'parent_id'=> 71,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Su nombre, firma y a quien comunica el reporte. El trabajador debe asegurarse que el jefe inmediato a quien entrega el reporte firme en el espacio correspondiente.',
-            'is_question'=> 0,
-            'parent_id'=> 71,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Todas son correctas.',
-            'is_question'=> 0,
-            'parent_id'=> 71,
-            'is_correct'=> 1,
-            'content_id'=> 1,
-        ]);
-        //PREGUNTA16-76
-        Bank::create([
-            'title'=>'16.	No utilizar una herramienta de manera adecuada es:',
-            'is_question'=> 1,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'a.	Condición subestándar',
-            'is_question'=> 0,
-            'parent_id'=> 76,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'b.	Acto subestándar',
-            'is_question'=> 0,
-            'is_correct' => 1,
-            'parent_id'=> 76,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'c.	Condición sub-estandar y Acto Sub-estándar ',
-            'is_question'=> 0,
-            'parent_id'=> 76,
-            'content_id'=> 1,
-        ]);
-        Bank::create([
-            'title'=>'d.	Ninguna opción es correcta',
-            'is_question'=> 0,
-            'parent_id'=> 76,
+            'parent_id'=> 46,
             'content_id'=> 1,
         ]);
 
-        //PREGUNTA17-81
+        //
+        //Termino del EXAMEN ENTRADA
+        //Inicio del EXAMEN DE SALIDA
+
+        //PREGUNTA1-51
         Bank::create([
-            'title'=>'17.	Una vía dañada sin señalética es:',
+            'title'=>'	La competencia está formado por:',
+            'is_question'=> 1,
+            'type'=>0,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Conocimientos',
+            'is_question'=> 0,
+            'parent_id'=> 51,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Aptitud física y mental',
+            'is_question'=> 0,
+            'parent_id'=> 51,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Actitudes',
+            'is_question'=> 0,
+            'parent_id'=> 51,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correctas',
+            'is_question'=> 0,
+            'parent_id'=> 51,
+            'is_correct'=> 1,
+            'content_id'=> 1,
+        ]);
+        //PREGUNTA2-56
+        Bank::create([
+            'title'=>'	El análisis funcional del ABC explica el comportamiento a través de:',
+            'is_question'=> 1,
+            'type'=> 0,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Antecedentes o activadores',
+            'is_question'=> 0,
+            'parent_id'=> 56,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Comportamiento',
+            'is_question'=> 0,
+            'parent_id'=> 56,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Consecuencia',
+            'is_question'=> 0,
+            'parent_id'=> 56,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correctas',
+            'is_question'=> 0,
+            'parent_id'=> 56,
+            'is_correct'=> 1,
+            'content_id'=> 1,
+        ]);
+        //PREGUNTA3-61
+        Bank::create([
+            'title'=>'	Desencadenan, estimulan, activan, motivan o direccionan el comportamiento',
+            'is_question'=> 1,
+            'type'=> 0,
+            'content_id'=> 1,
+        ]);
+
+        Bank::create([
+            'title'=>'	Reforzador',
+            'is_question'=> 0,
+            'parent_id'=> 61,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Consecuencia',
+            'is_question'=> 0,
+            'parent_id'=> 61,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Activador',
+            'is_question'=> 0,
+            'parent_id'=> 61,
+            'is_correct'=> 1,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Ninguna es correcta',
+            'is_question'=> 0,
+            'parent_id'=> 61,
+            'content_id'=> 1,
+        ]);
+        //PREGUNTA4-66
+        Bank::create([
+            'title'=>'	influyen en la probabilidad de que ese comportamiento se repita o desaparezca en el futuro:',
+            'is_question'=> 1,
+            'type'=>0,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Reforzador',
+            'is_question'=> 0,
+            'parent_id'=> 66,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Consecuencia',
+            'is_question'=> 0,
+            'parent_id'=> 66,
+            'is_correct'=> 1,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Activador',
+            'is_question'=> 0,
+            'parent_id'=> 66,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Ninguna es correcta',
+            'is_question'=> 0,
+            'parent_id'=> 66,
+            'content_id'=> 1,
+        ]);
+        //PREGUNTA5-71
+        Bank::create([
+            'title'=>'	La consecuencia que más refuerza un comportamiento es:',
+            'is_question'=> 1,
+            'type'=> 0,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Positiva – Inmediata - Cierta',
+            'is_question'=> 0,
+            'is_correct'=> 1,
+            'parent_id'=> 71,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Negativa – Inmediata - Cierta',
+            'is_question'=> 0,
+            'parent_id'=> 71,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Positiva – Lejana - Cierta',
+            'is_question'=> 0,
+            'parent_id'=> 71,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Negativa – Inmediata - Cierta',
+            'is_question'=> 0,
+            'parent_id'=> 71,
+            'content_id'=> 1,
+        ]);
+         //PREGUNTA6-76
+        Bank::create([
+            'title'=>'	Características de la gestión de SBC:',
+            'is_question'=> 1,
+            'type'=> 0,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Se focaliza en lo positivo',
+            'is_question'=> 0,
+            'parent_id'=> 76,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Cada trabajador observa y retroalimenta a sus compañeros.',
+            'is_question'=> 0,
+            'parent_id'=> 76,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Cada trabajador es observado y retroalimentado por sus compañeros.',
+            'is_question'=> 0,
+            'parent_id'=> 76,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correctas.',
+            'is_question'=> 0,
+            'is_correct'=>1,
+            'parent_id'=> 76,
+            'content_id'=> 1,
+        ]);
+        //PREGUNTA7-81
+        Bank::create([
+            'title'=>'	NO es un ERROR CRÍTICO:',
             'is_question'=> 1,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'Acto sub-estándar',
+            'title'=>'	Ojos no en la tarea',
+            'is_question'=> 0,
+            'parent_id'=> 81,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Exceso de confianza',
+            'is_question'=> 0,
+            'parent_id'=> 81,
+            'is_correct'=> 1,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Línea de fuego',
+            'is_question'=> 0,
+            'parent_id'=> 81,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Pérdida del equilibrio, tracción o agarre',
+            'is_question'=> 0,
+            'parent_id'=> 81,
+            'content_id'=> 1,
+        ]);
+
+        //PREGUNTA8-86
+        Bank::create([
+            'title'=>'	En el proceso de SBC es necesario: ',
+            'is_question'=> 1,
+            'type'=> 0,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Observar a sí mismo',
+            'is_question'=> 0,
+            'parent_id'=> 86,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Observar a los demás',
+            'is_question'=> 0,
+            'parent_id'=> 86,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Comunicar ',
+            'is_question'=> 0,
+            'parent_id'=> 86,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Todas son correctas',
             'is_question'=> 0,
             'is_correct'=> 1,
-            'parent_id'=> 81,
+            'parent_id'=> 86,
+            'content_id'=> 1,
+        ]);
+
+        //PREGUNTA9-91
+        Bank::create([
+            'title'=>'	Cuando observo un comportamiento inseguro debo: ',
+            'is_question'=> 1,
+            'type'=> 0,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'Incidente',
+            'title'=>'	Acercarme y hablar con mi compañero para sensibilizarlo.',
             'is_question'=> 0,
-            'parent_id'=> 81,
+            'is_correct'=> 1,
+            'parent_id'=> 91,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'Condición sub-estándar',
+            'title'=>'	Desarrollar un nuevo modo de trabajo.',
             'is_question'=> 0,
-            'parent_id'=> 81,
+            'parent_id'=> 91,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'Factores de trabajo ',
+            'title'=>'	Comprometer al trabajador firmando una declaración jurada.',
             'is_question'=> 0,
-            'parent_id'=> 81,
+            'parent_id'=> 91,
             'content_id'=> 1,
         ]);
-        ///Se Termino el Primer Examen de NOTIFICACION, INVESTIGACION Y REPORTE DE INCIDENTES PELIGROSOS Y ACCIDENTES DE TRABAJO
+        Bank::create([
+            'title'=>'	Lograr la comprensión del trabajador acerca de la sanción que recibirá.',
+            'is_question'=> 0,
+            'parent_id'=> 91,
+            'content_id'=> 1,
+        ]);
+        //PREGUNTA10-96
+        Bank::create([
+            'title'=>'	Cuando observo un comportamiento seguro, debo',
+            'is_question'=> 1,
+            'type'=> 0,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Felicitar al trabajador por su comportamiento seguro.',
+            'is_question'=> 0,
+            'parent_id'=> 96,
+            'is_correct'=> 1,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Sancionar al trabajador.',
+            'is_question'=> 0,
+            'parent_id'=> 96,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Tomarlo como algo normal y seguir con el trabajo',
+            'is_question'=> 0,
+            'parent_id'=> 96,
+            'content_id'=> 1,
+        ]);
+        Bank::create([
+            'title'=>'	Ignorar al trabajador.',
+            'is_question'=> 0,
+            'parent_id'=> 96,
+            'content_id'=> 1,
+        ]);
+
     }
 }

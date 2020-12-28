@@ -31,9 +31,9 @@ class CourseTestController extends Controller
         $classroom->load(['course.banks' => function($query) use($test) {
             if($test->random == 1)
             {
-                $query->inRandomOrder()->limit($test->number_question)->where('banks.parent_id',null)->with(['childs']);
+                $query->inRandomOrder()->limit($test->number_question)->where('banks.parent_id',null)->whereIn('type' ,[$test->type,Bank::EXTRAORDINARY])->with(['childs']);
             }else{
-                $query->limit($test->number_question)->where('banks.parent_id',null)->with(['childs']);
+                $query->limit($test->number_question)->where('banks.parent_id',null)->whereIn('type' ,[$test->type,Bank::EXTRAORDINARY])->with(['childs']);
             }
         }])->get();
 
@@ -127,6 +127,16 @@ class CourseTestController extends Controller
         }
         public function detail(Classroom $classroom,TestUser $test_user)
         {
-            return view('tests.detail',compact('test_user','classroom','message'));
+            //nos traemos todo el banco y lo igualamos a las preguntas de nuestro examen con los childs
+            $classroom->load(['course.banks' => function($query) use($test_user) {
+
+                $query->where('banks.parent_id',null)->whereIn('banks.id',$test_user->questions)->with(['childs']);
+
+            }])->get();
+            //determinarmos las correctas e incorrectas
+            $incorrect_answers=array_diff($test_user->answers,$test_user->correct_answers);
+            $correct_answers = array_diff($test_user->answers,$incorrect_answers);
+
+            return view('tests.detail',compact('test_user','classroom','incorrect_answers','correct_answers'));
         }
 }

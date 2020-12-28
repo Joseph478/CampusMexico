@@ -27,14 +27,12 @@ class TestController extends Controller
 
     public function list(Classroom $classroom,$key=null)
     {
-
         $disabled=false;
         $user = Auth::user();
         //Obtenemos la fecha actual para aumentarle 30 minutos
         $date_now = new DateTime(Carbon::now()->format('Y-m-d H:i:s'));
 
-        $inscription=Inscription::where(['user_id' => $user->id, 'classroom_id' => $classroom->id])->active()->firstOr(function () use($classroom,$disabled){
-
+        $inscription=Inscription::where(['user_id' => $user->id, 'classroom_id' => $classroom->id])->active()->firstOr(function () use($classroom){
             return view('tests.index', compact('classroom','disabled'));
         });
 
@@ -47,9 +45,7 @@ class TestController extends Controller
         $last_tried_date->modify('+1 minute')->format('Y-m-d H:i:s');
         //comparamos las fechas para ver si se desabilitará la opcion o se
         //habilitara
-
-        if($last_tried_date > $date_now){
-
+        if($last_tried_date > $date_now ){
             $disabled = true;
         }elseif($inscription->grade >= $inscription->grade_min)
         {
@@ -60,6 +56,7 @@ class TestController extends Controller
         //se filtrara
         if($key==Test::BEGIN)
         {
+
             $classroom->load(['tests'=>function($query) use($user){
 
                     $query->where(['type' => Test::BEGIN]);
@@ -67,6 +64,7 @@ class TestController extends Controller
                     $query->with(['testuser'=>function($query) use($user){
                         $query->where('user_id',$user->id);
                     }]);
+
             }]);
 
         }else{
@@ -81,6 +79,10 @@ class TestController extends Controller
 
         }
 
+        if($inscription->assistance ==null)
+        {
+            $disabled=true;
+        }
 
         return view('tests.index',compact('classroom','disabled'));
     }

@@ -20,6 +20,7 @@ class CreateBanksTable extends Migration
                 ->references('id')->on('contents')
                 ->onDelete('cascade');
             $table->string('title',500);
+            $table->string('type',1)->nullable();
             $table->bigInteger('is_question')->default(1);
             $table->bigInteger('is_correct')->default(0);
             $table->bigInteger('parent_id')->nullable();

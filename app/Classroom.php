@@ -86,6 +86,8 @@ class Classroom extends Model
     const IS_FREE = '1';
     const NO_FREE = '0';
 
+    const RESTRICTED = '1';
+
     protected $fillable = [
         'course_id','user_id','type',
         'start_datetime','end_datetime',
@@ -196,4 +198,5 @@ class Classroom extends Model
         $flat = Carbon::createFromFormat(config('app.date_format'), $value)->format('Y-m-d');
         $this->attributes['end_datetime'] = $flat;
     }
+
 }

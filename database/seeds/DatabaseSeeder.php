@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionTableSeeder::class);
         $this->call(ContentTableSeeder::class);
         $this->call(UserTableSeeder::class);
+        $this->call(ClassroomTableSeeder::class);
+        $this->call(TestTableSeeder::class);
         $this->call(BankTableSeeder::class);
 
 
