@@ -15,7 +15,7 @@ class ClassroomTableSeeder extends Seeder
     {
         Classroom::create([
             'course_id'=> 1,
-            'user_id' =>2,
+            'user_id' => 5,
             'type' => 'regular',
             'vacancies' => 40,
             'modality' => 'virtual',
