@@ -104,7 +104,7 @@
                             @empty
                             <tr>
                                 <td colspan="7">
-                                    <p class="text-center">No hay ninguna evaluacion disponible disponible</p>
+                                    <p class="text-center">No hay ninguna evaluacion disponible</p>
                                 </td>
                             </tr>
                             @endforelse

@@ -21,7 +21,7 @@ class CompanyTableSeeder extends Seeder
 
         Company::create([
             'ruc' => '20100147514',
-            'name' => 'SOUTHERN PERU COPPER CORPORATION SUCURSA L DEL PERU',
+            'name' => 'GRUPO MEXICO',
             'address' => 'Av. Caminos del Inca Nro. 171 Chacarilla del Estanque - Santiago de Surco, Lima, Perú',
             'state' => 1,
         ]);

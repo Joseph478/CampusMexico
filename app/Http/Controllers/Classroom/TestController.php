@@ -56,21 +56,19 @@ class TestController extends Controller
         //se filtrara
         if($key==Test::BEGIN)
         {
-
             $classroom->load(['tests'=>function($query) use($user){
 
                     $query->where(['type' => Test::BEGIN]);
 
                     $query->with(['testuser'=>function($query) use($user){
                         $query->where('user_id',$user->id);
-                    }]);
+                    }])->active();
 
             }]);
 
         }else{
 
             $classroom->load(['tests'=>function($query) use($user){
-
                 $query->with(['testuser'=>function($query) use($user){
                     $query->where('user_id',$user->id);
 
@@ -79,7 +77,7 @@ class TestController extends Controller
 
         }
 
-        if($inscription->assistance ==null)
+        if($inscription->assistance != 'A')
         {
             $disabled=true;
         }

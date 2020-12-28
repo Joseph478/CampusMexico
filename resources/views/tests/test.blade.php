@@ -11,7 +11,7 @@
                         </i>
                     </div>
                     <div>{{$test->name}}
-                        <div class="page-title-subheading">Nota maxima : {{$test->grade_max}}
+                        <div class="page-title-subheading">IGH Le desea suerte en su Examen <img src="{{asset('storage/feliz.png')}}" alt="">
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ class CoursesTableSeeder extends Seeder
 
         Course::create([
             'category_id' => 1,
-            'name' => 'SEGURIDAD BASADA EN ELCOMPORTAMIENTO',
+            'name' => 'SEGURIDAD BASADA EN EL COMPORTAMIENTO',
             'grade_min'=>'16.00',
             'description'=>'Valorar el impacto de las
             consecuencias positivas,

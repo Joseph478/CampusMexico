@@ -47,7 +47,7 @@ class BankTableSeeder extends Seeder
         ]);
         //PREGUNTA2-6
         Bank::create([
-            'title'=>' Los activadores',
+            'title'=>' Los activadores son',
             'is_question'=> 1,
             'type'=>1,
             'content_id'=> 1,
@@ -65,15 +65,15 @@ class BankTableSeeder extends Seeder
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>' Son situaciones, eventos o sucesos.',
+            'title'=>' Situaciones, eventos o sucesos.',
             'is_question'=> 0,
+            'is_correct'=> 1,
             'parent_id'=> 6,
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'	A y C son correctas.',
+            'title'=>' Todas son correctas',
             'is_question'=> 0,
-            'is_correct'=> 1,
             'parent_id'=> 6,
             'content_id'=> 1,
         ]);
@@ -167,7 +167,7 @@ class BankTableSeeder extends Seeder
             'content_id'=> 1,
         ]);
         Bank::create([
-            'title'=>'	Todas son correcta.',
+            'title'=>'	Todas son correctas.',
             'is_question'=> 0,
             'parent_id'=> 21,
             'is_correct'=>1,

@@ -46,6 +46,46 @@ class UserTableSeeder extends Seeder
             'email'=>'jose@ighgroup.com',
             'password'=> bcrypt('root'),
         ]);
+        $monica = User::create([
+            'company_id' => 1,
+            'dni' => '78945612',
+            'name'=>'Leyla Monica',
+            'last_name'=>'Huaman',
+            'email'=>'leyla.huaman@ighgroup.com',
+            'password'=> bcrypt('78945612'),
+        ]);
+        $mary = User::create([
+            'company_id' => 1,
+            'dni' => '75612345',
+            'name'=>'Mary',
+            'last_name'=>'Vasques',
+            'email'=>'mary.vasquez@ighgroup.com',
+            'password'=> bcrypt('75612345'),
+        ]);
+        $angelica = User::create([
+            'company_id' => 1,
+            'dni' => '85235712',
+            'name'=>'angelica',
+            'last_name'=>'IGH',
+            'email'=>'angelica.igh@ighgroup.com',
+            'password'=> bcrypt('85235712'),
+        ]);
+        $camille = User::create([
+            'company_id' => 1,
+            'dni' => '95175324',
+            'name'=>'camille',
+            'last_name'=>'hudson',
+            'email'=>'camille.hudson@ighgroup.com',
+            'password'=> bcrypt('95175324'),
+        ]);
+        $diego = User::create([
+            'company_id' => 1,
+            'dni' => '32489657',
+            'name'=>'Diego',
+            'last_name'=>'IGH',
+            'email'=>'diego.igh@ighgroup.com',
+            'password'=> bcrypt('32489657'),
+        ]);
         $facilitator = User::create([
             'company_id' => 1,
             'dni' => '00000001',
@@ -83,6 +123,11 @@ class UserTableSeeder extends Seeder
         $rol = Role::findByName('contratista');
         $rol->syncPermissions($contrata_permissions);
         $contrata->assignRole([$rol->id]);
+        $monica->assignRole([$rol->id]);
+        $mary->assignRole([$rol->id]);
+        $angelica->assignRole([$rol->id]);
+        $camille->assignRole([$rol->id]);
+        $diego->assignRole([$rol->id]);
         $contrata_melissa->assignRole([$rol->id]);
 
         //$contrata->companies()->attach('1');
