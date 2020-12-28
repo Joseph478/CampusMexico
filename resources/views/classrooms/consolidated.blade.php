@@ -68,7 +68,7 @@
 {{--                        <i class="fa fa-clipboard-list mr-1"></i>--}}
 {{--                        Asistencia--}}
 {{--                    </a>--}}
-                    <a href="#" class="btn btn-sm btn-success">subir</a>
+                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalShow">subir</button>
                     <a href="{{ route('exportExcel.consolidated', $classroom) }}" class="btn btn-sm btn-primary">descargar</a>
 
                 </div>
@@ -148,6 +148,35 @@
     </div>
 
 @endsection
+
+@section('modal')
+    <div class="modal" tabindex="-1" role="dialog" id="modalShow">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="{{ route('importExcel.consolidated', $classroom) }}" method="post" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Subir Archivo para la asistencia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @csrf
+                        <div class="form-group">
+                            <label for="file">Selecione un archivo</label>
+                            <input type="file" class="form-control-file" id="file" name="file">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">Cargar</button>
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
 @section('js')
     <script>
         $(document).ready(function () {

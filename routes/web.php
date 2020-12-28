@@ -109,6 +109,8 @@ route::get('report','ReportController@index')->name('report');
 route::post('exportExcel','ReportController@exportExcel')->name('exportExcel');
 route::get('exportExcelConsolidated/{classroom}','Classroom\ClassroomConsolidatedController@exportExcelConsolidated')
     ->name('exportExcel.consolidated');
+route::post('importExcelConsolidated/{classroom}','Classroom\ClassroomConsolidatedController@importExcelConsolidated')
+    ->name('importExcel.consolidated');
 route::get('exportExcel/Grade','ReportController@exportDetailGrade')->name('exportDetailGrade');
 
 //Question
