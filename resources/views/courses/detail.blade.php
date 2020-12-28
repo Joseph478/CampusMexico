@@ -37,7 +37,7 @@
                         @if(count($classroom->meetings) > 0)
                             <div class="col-sm-4 d-flex flex-column align-items-center mb-4 card-detail">
                                 <div class="bg__videos mb-3 p-2 rounded-circle card-detail__img">
-                                    <a href="#">
+                                    <a href="{{ route('classrooms.meetings.index', [$classroom]) }}">
                                         <img src="{{ asset('img/icons/videos.png') }}" alt="conferencia" class="">
                                     </a>
                                 </div>

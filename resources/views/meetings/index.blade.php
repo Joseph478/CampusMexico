@@ -38,7 +38,13 @@
                         {{ $classroom->name }} / {{ $classroom->start_datetime }} / {{ $classroom->end_datetime }}
                     </div>
                     <div class="btn-actions-pane-right text-capitalize">
-                        <a href="{{ route('classrooms.index') }}" class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"><i class="fa fa-undo-alt"></i> REGRESAR</a>
+                        @if(Auth::user()->hasRole('participante'))
+                            <a href="{{ route('courses.participant.detail', [$classroom->id, Auth::id()]) }}" class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
+                                <i class="fa fa-undo-alt"></i> REGRESAR
+                            </a>
+                        @else
+                            <a href="{{ route('classrooms.index') }}" class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm"><i class="fa fa-undo-alt"></i> REGRESAR</a>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body">
@@ -51,7 +57,9 @@
                                 <th scope="col" >Plataforma</th>
                                 <th scope="col" >Código</th>
                                 <th scope="col" >Clave</th>
-                                <th scope="col" >Link</th>
+                                @if(!Auth::user()->hasRole('participante'))
+                                    <th scope="col" >Link</th>
+                                @endif
                                 <th scope="col" >Acciones</th>
                             </tr>
                             </thead>
@@ -63,13 +71,19 @@
                                     <td>{{ $meeting->platform }}</td>
                                     <td><span class="text-nowrap">{{ $meeting->platform_id }}</span></td>
                                     <td>{{ $meeting->platform_password }}</td>
-                                    <td>{{ $meeting->platform_url }}</td>
+                                    @if(!Auth::user()->hasRole('participante'))
+                                        <td>{{ $meeting->platform_url }}</td>
+                                    @endif
                                     <td style="white-space:nowrap;">
+                                    @if(Auth::user()->hasRole('participante'))
+                                            <a href="{{ $meeting->platform_url }}" class="btn btn-sm btn-success" target="_blank">INGRESAR</a>
+                                    @else
                                         <a class="btn btn-sm btn-icon-only btn-outline-info" href="{{ route('classrooms.meetings.show',[$classroom->id, $meeting->id]) }}"><i class="pe-7s-look btn-icon-wrapper"></i></a>
                                         <a class="btn btn-sm btn-icon-only btn-outline-warning" href="{{ route('classrooms.meetings.edit',[$classroom->id, $meeting->id]) }}"><i class="pe-7s-pen btn-icon-wrapper"></i></a>
                                         {!! Form::open(['method' => 'DELETE','route' => ['classrooms.meetings.destroy', [$classroom->id, $meeting->id]],'style'=>'display:inline']) !!}
-                                            {{ Form::button('<i class="pe-7s-trash btn-icon-wrapper"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-icon-only btn-outline-danger'] ) }}
+                                        {{ Form::button('<i class="pe-7s-trash btn-icon-wrapper"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-icon-only btn-outline-danger'] ) }}
                                         {!! Form::close() !!}
+                                    @endif
                                     </td>
                                 </tr>
                             @empty
