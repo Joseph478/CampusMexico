@@ -36,7 +36,10 @@
 
                         @if(count($classroom->meetings) > 0)
                             <div class="col-sm-4 d-flex flex-column align-items-center mb-4 card-detail">
-                                <div class="bg__reunion mb-3 p-2 rounded-circle card-detail__img">
+                                <div class="bg__videos mb-3 p-2 rounded-circle card-detail__img">
+                                    <a href="#">
+                                        <img src="{{ asset('img/icons/videos.png') }}" alt="conferencia" class="">
+                                    </a>
                                 </div>
                                 <span class="font-weight-bold card-detail__title">Video Conferencia</span>
                             </div>

@@ -86,17 +86,26 @@ class Classroom extends Model
     const IS_FREE = '1';
     const NO_FREE = '0';
 
-    const RESTRICTED = '1';
-
     protected $fillable = [
-        'course_id','user_id','type',
-        'start_datetime','end_datetime',
-        'token',
-        'name','hour','grade_min','is_free',
-        'validity','type_validity',
-        'vacancies', 'modality',
+        'course_id',
+        'user_id',
+        'type',
+        'start_datetime',
+        'end_datetime',
+        'vacancies',
+        'modality',
         'test_begin_required',
+        'is_free',
+        'token',
+        'name',
+        'hour',
+        'grade_min',
+        'validity',
+        'type_validity',
+        'state'
     ];
+
+    const RESTRICTED = '1';
 
     public function course() {
         return $this->belongsTo(Course::class,'course_id');

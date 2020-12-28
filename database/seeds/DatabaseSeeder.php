@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             'categories',
             'types',
             'courses',
+            'classrooms',
             'contents',
             'companies',
         ]);

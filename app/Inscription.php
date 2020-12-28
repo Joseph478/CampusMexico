@@ -73,7 +73,6 @@ class Inscription extends Model
         'first_access',
         'state',
         'updated_at'
-
     ];
 
     protected $casts =[
