@@ -16,7 +16,7 @@ class ContentTableSeeder extends Seeder
             'course_id' => 1,
             'type_id' => 1,
             'name' => 'Modulo 1',
-            'description' => 'Aprenderás a editar videos de forma profesional',
+            'description' => 'Aprenderás cursos de formacion laboral',
             'order' => 1,
         ]);
     }

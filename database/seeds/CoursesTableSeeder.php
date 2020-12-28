@@ -12,15 +12,20 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
+
         Course::create([
             'category_id' => 1,
-            'name' => 'SEGURIDAD BASADA EN EL COMPORTAMIENTO',
+            'name' => 'SEGURIDAD BASADA EN ELCOMPORTAMIENTO',
             'grade_min'=>'16.00',
-            'description'=>'Las empresas pueden tomar acciones preventivas o planes de mejoraValorar el impacto de las
-                            consecuencias positivas, inmediatas y certeras, para motivar hábitos seguros.',
+            'description'=>'Valorar el impacto de las
+            consecuencias positivas,
+            inmediatas y certeras, para
+            motivar hábitos seguros.
+            ',
             'hour'=> 2,
             'validity' => 1,
             'type_validity' => 1
         ]);
+
     }
 }
